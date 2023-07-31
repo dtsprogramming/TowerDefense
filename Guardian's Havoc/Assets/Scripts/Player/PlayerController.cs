@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent (typeof(PlayerInput))]
@@ -12,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput pInput;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,7 +18,6 @@ public class PlayerController : MonoBehaviour
         pInput = GetComponent<PlayerInput>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -39,11 +36,10 @@ public class PlayerController : MonoBehaviour
 
         float rotation = pInput.mouseX * rotationSpeed * Time.fixedDeltaTime;
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             transform.Rotate(Vector3.up, rotation);
         }
-        else { transform.eulerAngles = Vector3.zero; }
     }
 
     private void FireWeapon()
