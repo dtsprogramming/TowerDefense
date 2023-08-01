@@ -38,7 +38,16 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
             transform.Rotate(Vector3.up, rotation);
+        }
+
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
